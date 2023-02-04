@@ -1,0 +1,9 @@
+attachement/
+/application/config
+/application/cache
+/application/logs
+/public/upload
+/readme
+/maintenance
+/system
+gstbill.zip

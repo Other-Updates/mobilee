@@ -1,0 +1,11 @@
+ALTER TABLE `erp_user_roles`  ADD `grand_all` TINYINT(1) NOT NULL DEFAULT '0'  AFTER `permission`;
+
+ALTER TABLE `customer`  ADD `customer_type` ENUM('cash_customer','credit_customer','cash_contractor','credit_contractor') NOT NULL  AFTER `tin`;
+
+ALTER TABLE `customer`  ADD `credit_days` INT NOT NULL  AFTER `customer_type`,  ADD `credit_limit` VARCHAR(50) NOT NULL  AFTER `credit_days`;
+
+ALTER TABLE `erp_notification`  ADD `due_date` DATE NOT NULL  AFTER `notification_date`;
+
+ALTER TABLE `erp_product`  ADD `reorder_quantity` INT NOT NULL  AFTER `min_qty`;
+
+ALTER TABLE `erp_product`  ADD `cash_cus_price` INT NOT NULL  AFTER `cost_price`,  ADD `credit_cus_price` INT NOT NULL  AFTER `cash_cus_price`,  ADD `cash_con_price` INT NOT NULL  AFTER `credit_cus_price`,  ADD `credit_con_price` INT NOT NULL  AFTER `cash_con_price`;
